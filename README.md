@@ -20,15 +20,14 @@
 - 可改善的方向：
     1. 可增加原始圖像資料的張數，或拍攝一些實際情況可能發生的皺褶、歪斜圖像用以加入訓練，來提高面對實際環境情況可能有差異的準確率
     2. 增加 CNN 模型的層數、選用不同的 kernel ( filter ) 來做卷積運算，或是調整 CNN 模型訓練的超參數 ( 例如：padding ( 邊緣補0 )、strides ( filter的滑動步長 ) )，以提高模型擷取特徵的能力
-- code 區
-    
+- 套件修改區：
     ```jsx
     # imguag 套件發生 **AttributeError**: `np.sctypes` was removed in the NumPy 2.0 release. Access dtypes explicitly instead.
     # 需要將 imgaug.py 檔案內第39行的後3行
     NP_FLOAT_TYPES = set(np.sctypes["float"])
     NP_INT_TYPES = set(np.sctypes["int"])
     NP_UINT_TYPES = set(np.sctypes["uint"])
-    # 修改成
+    # 修改成：
     NP_FLOAT_TYPES = {np.float16, np.float32, np.float64}
     NP_INT_TYPES = {np.int8, np.int16, np.int32, np.int64}
     NP_UINT_TYPES = {np.uint8, np.uint16, np.uint32, np.uint64}
