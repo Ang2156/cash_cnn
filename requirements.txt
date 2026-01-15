@@ -1,0 +1,6 @@
+tensorflow-cpu
+streamlit
+imageio
+numpy
+scikit-image
+imgaug
