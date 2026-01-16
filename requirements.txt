@@ -4,4 +4,3 @@ imageio
 numpy
 scikit-image
 imgaug
-opencv-python
